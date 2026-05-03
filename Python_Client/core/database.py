@@ -173,7 +173,7 @@ def insert_attendance(university_id, date, status):
     
     try:
         cursor = conn.cursor()
-        sql = "INSERT INTO Attendance (University_ID, Date, Status) VALUES (%s, %s, %s)"
+        sql = "INSERT INTO Attendance (Student_ID, AttendanceDate, Status) VALUES (%s, %s, %s)"
         cursor.execute(sql, (university_id, date, status))
         conn.commit()
         messagebox.showinfo("Success", f"Attendance logged for {university_id}!")
@@ -207,7 +207,7 @@ def get_attendance_by_student(university_id):
     
     try:
         cursor = conn.cursor()
-        sql = "SELECT Date, Status FROM Attendance WHERE University_ID = %s ORDER BY Date"
+        sql = "SELECT AttendanceDate, Status FROM Attendance WHERE Student_ID = %s ORDER BY AttendanceDate"
         cursor.execute(sql, (university_id,))
         results = cursor.fetchall()
         return results
@@ -235,7 +235,7 @@ def get_all_attendance():
     
     try:
         cursor = conn.cursor()
-        sql = "SELECT University_ID, Date, Status FROM Attendance ORDER BY Date DESC"
+        sql = "SELECT Student_ID, AttendanceDate, Status FROM Attendance ORDER BY AttendanceDate DESC"
         cursor.execute(sql)
         results = cursor.fetchall()
         return results
