@@ -16,8 +16,8 @@ DB_CONFIG = {
 # These are just constants for the GUI
 
 APP_TITLE = "SMAS - Student Management & Attendance System"
-APP_WIDTH = 450
-APP_HEIGHT = 400
+APP_WIDTH = 700
+APP_HEIGHT = 550
 
 # Font styles (used throughout the app)
 FONT_TITLE = ("Arial", 16, "bold")
